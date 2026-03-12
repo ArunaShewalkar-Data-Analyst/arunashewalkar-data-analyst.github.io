@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn more about us">
+    <title>About Us - My Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            text-align: center;
+            opacity: 0.9;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #667eea;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .about-hero {
+            background: white;
+            padding: 3rem 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .about-hero h2 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .about-hero p {
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        .content-section {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .content-section h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .content-section h3:first-child {
+            margin-top: 0;
+        }
+
+        .team-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .team-member {
+            background: #f9f9f9;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            border-left: 4px solid #667eea;
+        }
+
+        .team-member h4 {
+            color: #333;
+            margin: 1rem 0 0.5rem 0;
+        }
+
+        .team-member p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .values-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .value-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .value-box h4 {
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>About Us</h1>
+        <p>Learn more about our story, mission, and values</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about-us.html">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="about-hero">
+            <h2>Our Story</h2>
+            <p>Welcome! We are a dedicated team committed to delivering exceptional quality and service. Since our founding, we have been driven by a passion for excellence and innovation.</p>
+        </section>
+
+        <section class="content-section">
+            <h3>Our Mission</h3>
+            <p>Our mission is to provide outstanding products and services that make a positive impact on our customers' lives. We believe in the power of innovation, collaboration, and continuous improvement.</p>
+
+            <h3>Our Vision</h3>
+            <p>We envision becoming a leader in our industry, known for our commitment to quality, customer satisfaction, and sustainable practices.</p>
+
+            <h3>Our Values</h3>
+            <div class="values-container">
+                <div class="value-box">
+                    <h4>Integrity</h4>
+                    <p>We conduct our business with honesty and transparency</p>
+                </div>
+                <div class="value-box">
+                    <h4>Excellence</h4>
+                    <p>We strive for the highest quality in everything we do</p>
+                </div>
+                <div class="value-box">
+                    <h4>Innovation</h4>
+                    <p>We embrace creative solutions and continuous improvement</p>
+                </div>
+                <div class="value-box">
+                    <h4>Teamwork</h4>
+                    <p>We believe in the power of collaboration and unity</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h3>Our Team</h3>
+            <p>We are proud of our talented and dedicated team members who work tirelessly to achieve our goals.</p>
+            <div class="team-container">
+                <div class="team-member">
+                    <h4>John Doe</h4>
+                    <p><strong>Founder & CEO</strong></p>
+                    <p>With over 10 years of experience in the industry, John leads our vision forward.</p>
+                </div>
+                <div class="team-member">
+                    <h4>Jane Smith</h4>
+                    <p><strong>Chief Operating Officer</strong></p>
+                    <p>Jane ensures operational excellence and drives strategic growth.</p>
+                </div>
+                <div class="team-member">
+                    <h4>Mike Johnson</h4>
+                    <p><strong>Head of Development</strong></p>
+                    <p>Mike oversees our technical team and innovation initiatives.</p>
+                </div>
+                <div class="team-member">
+                    <h4>Sarah Williams</h4>
+                    <p><strong>Customer Success Manager</strong></p>
+                    <p>Sarah ensures every customer receives exceptional support and service.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 My Website. All rights reserved.</p>
+        <p>Contact: info@mywebsite.com | Phone: (555) 123-4567</p>
+    </footer>
+</body>
+</html>
