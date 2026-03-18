@@ -2,77 +2,91 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact | Aruna Shewalkar</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
 
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Poppins', sans-serif;
+      background: #f9fafb;
       color: #333;
     }
 
-    /* HEADER (dark like GitHub Pages theme) */
+    /* NAVBAR (same as other pages) */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 10%;
+      background: white;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+    }
+
+    nav h3 {
+      margin: 0;
+      color: #2563eb;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #2563eb;
+    }
+
+    /* HEADER (same as About/Home) */
     .header {
-      background: linear-gradient(to right, #2c2c2c, #000);
-      color: white;
-      text-align: center;
-      padding: 80px 20px 40px;
+      padding: 60px 10%;
+      background: linear-gradient(to right, #f8fafc, #eef2ff);
     }
 
     .header h1 {
       margin: 0;
-      font-size: 40px;
+      font-size: 36px;
     }
 
     .header p {
       margin-top: 10px;
-      font-size: 18px;
-      color: #ccc;
+      color: #555;
     }
 
-    /* NAV */
-    .nav {
-      text-align: center;
-      margin-top: 20px;
+    /* CONTENT (simple like screenshot) */
+    .container {
+      max-width: 900px;
+      margin-left: 10%;
+      padding: 40px 0;
     }
 
-    .nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-size: 16px;
-    }
-
-    .nav a:hover {
-      text-decoration: underline;
-    }
-
-    /* CONTENT */
-    .content {
-      background: #f4f4f4;
-      padding: 50px 20%;
-    }
-
-    .content h2 {
+    h2 {
       margin-bottom: 20px;
     }
 
-    .content p {
+    p {
       font-size: 16px;
+      color: #444;
+    }
+
+    a {
+      color: #2563eb;
+      text-decoration: none;
     }
 
     /* FOOTER */
-    .footer {
-      background: #222;
-      color: #ccc;
+    footer {
       text-align: center;
-      padding: 30px;
-    }
-
-    .footer a {
-      color: #fff;
-      text-decoration: underline;
+      padding: 20px;
+      background: #111;
+      color: white;
+      margin-top: 40px;
     }
 
   </style>
@@ -80,29 +94,39 @@
 
 <body>
 
-  <!-- HEADER -->
-  <div class="header">
-    <h1>Aruna Shewalkar</h1>
-    <p>GitHub Projects</p>
-
-    <div class="nav">
+  <!-- NAVBAR -->
+  <nav>
+    <h3>Aruna</h3>
+    <div>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="#">Projects</a>
       <a href="contact.html">Contact</a>
     </div>
-  </div>
+  </nav>
 
-  <!-- CONTENT -->
-  <div class="content">
+  <!-- HEADER -->
+  <section class="header">
+    <h1>Contact</h1>
+    <p>Get in touch with me</p>
+  </section>
+
+  <!-- SIMPLE CONTENT -->
+  <div class="container">
     <h2>Contact</h2>
-    <p>Email: arunashewalkar@gmail.com</p>
+
+    <p>
+      Email:
+      <a href="mailto:arunashewalkar@gmail.com">
+        arunashewalkar@gmail.com
+      </a>
+    </p>
   </div>
 
   <!-- FOOTER -->
-  <div class="footer">
-    <p>Published with <a href="#">GitHub Pages</a></p>
-  </div>
+  <footer>
+    <p>© 2026 Aruna Shewalkar</p>
+  </footer>
 
 </body>
 </html>
