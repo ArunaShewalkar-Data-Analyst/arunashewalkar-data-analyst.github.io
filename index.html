@@ -8,6 +8,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
 
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
@@ -15,12 +19,21 @@
       color: #333;
     }
 
+    /* NAVBAR */
     nav {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       padding: 20px 10%;
       background: white;
       box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+    }
+
+    nav h3 {
+      margin: 0;
+      color: #2563eb;
     }
 
     nav a {
@@ -34,27 +47,41 @@
       color: #2563eb;
     }
 
+    /* HERO SECTION */
     .hero {
-      height: 80vh;
+      height: 85vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: flex-start;  
-      text-align: left;          
-      padding: 0 20px;
+      align-items: flex-start;
+      padding: 0 10%;
+      background: linear-gradient(to right, #f8fafc, #eef2ff);
     }
 
     .hero h1 {
-  font-size: 42px;
-  margin-bottom: 10px;
-}
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
 
-.hero p {
-  font-size: 18px;
-  color: #555;
-  margin-bottom: 20px;
-  max-width: 600px;
-}
+    .hero p {
+      font-size: 18px;
+      color: #555;
+      margin-bottom: 15px;
+      max-width: 600px;
+    }
+
+    .intro {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #555;
+      max-width: 600px;
+      margin-bottom: 25px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 10px;
+    }
 
     .btn {
       padding: 12px 24px;
@@ -62,33 +89,43 @@
       color: white;
       border-radius: 6px;
       text-decoration: none;
-      margin: 5px;
       display: inline-block;
     }
-    .intro {
-  max-width: 650px;
-  
-  font-size: 16px;
-  line-height: 1.6;
-  color: #555;
-}
-  .buttons {
-  display: flex;
-  gap: 10px;
-}
 
+    /* CONTENT SECTION */
+    .content {
+      padding: 60px 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin-left: 10%;
+    }
+
+    .container h2 {
+      margin-bottom: 15px;
+    }
+
+    .container p {
+      line-height: 1.7;
+      color: #444;
+    }
+
+    /* FOOTER */
     footer {
       text-align: center;
-      padding: 15px;
+      padding: 20px;
       background: #111;
       color: white;
+      margin-top: 40px;
     }
+
   </style>
 </head>
 
 <body>
 
-  <!-- NAV -->
+  <!-- NAVBAR -->
   <nav>
     <h3>Aruna</h3>
     <div>
@@ -99,17 +136,18 @@
     </div>
   </nav>
 
-  <!-- HERO -->
+  <!-- HERO / HOME -->
   <section id="home" class="hero">
     <h1>Hi, I'm Aruna Shewalkar</h1>
+
     <p>Data Analyst | Python | SQL | Tableau</p>
 
     <p class="intro">
-  Welcome to my data analytics portfolio. This space showcases my journey into data science,
-  where I explore real-world datasets using Python, SQL, and visualization tools.
-  I continuously work on improving my analytical thinking and building projects that
-  turn data into meaningful insights.
-</p>
+      Welcome to my data analytics portfolio. This space showcases my journey into data science,
+      where I explore real-world datasets using Python, SQL, and visualization tools.
+      I continuously work on improving my analytical thinking and building projects that
+      turn data into meaningful insights.
+    </p>
 
     <div class="buttons">
       <a href="about.html" class="btn">About Me</a>
@@ -117,6 +155,21 @@
     </div>
   </section>
 
+  <!-- CONTENT / BLOG STYLE SECTION -->
+  <section class="content">
+    <div class="container">
+      <h2>Welcome</h2>
+
+      <p>
+        This portfolio is a work in progress and will be regularly updated with new projects
+        and data analysis work. The tools used in these projects include Python, SQL, and Tableau.
+        I enjoy analyzing data, discovering patterns, and continuously improving my skills
+        in data analytics and visualization.
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
     <p>© 2026 Aruna Shewalkar</p>
   </footer>
