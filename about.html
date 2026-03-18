@@ -15,43 +15,72 @@
       color: #333;
     }
 
+    /* NAVBAR (same as index) */
     nav {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       padding: 20px 10%;
       background: white;
       box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+    }
+
+    nav h3 {
+      margin: 0;
+      color: #2563eb;
     }
 
     nav a {
       margin-left: 20px;
       text-decoration: none;
       color: #333;
+      font-weight: 500;
     }
 
     nav a:hover {
       color: #2563eb;
     }
 
-    .container {
+    /* HEADER SECTION (same style feel) */
+    .header {
       padding: 60px 10%;
+      background: linear-gradient(to right, #f8fafc, #eef2ff);
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 36px;
+    }
+
+    .header p {
+      margin-top: 10px;
+      color: #555;
+    }
+
+    /* CONTENT */
+    .container {
       max-width: 900px;
-      margin: auto;
+      margin-left: 10%;
+      padding: 40px 0;
     }
 
     h2 {
-      margin-bottom: 20px;
+      margin-top: 30px;
+      margin-bottom: 10px;
     }
 
     p {
       line-height: 1.7;
-      margin-bottom: 20px;
+      color: #444;
     }
 
     .skills {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
+      margin-top: 10px;
     }
 
     .skill {
@@ -60,24 +89,39 @@
       border-radius: 20px;
       font-size: 14px;
     }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #111;
+      color: white;
+      margin-top: 40px;
+    }
+
   </style>
 </head>
 
 <body>
 
-  <!-- NAV -->
+  <!-- SAME NAVBAR -->
   <nav>
     <h3>Aruna</h3>
     <div>
       <a href="index.html">Home</a>
+      <a href="about.html">About</a>
       <a href="#">Projects</a>
       <a href="#">Contact</a>
     </div>
   </nav>
 
-  <!-- CONTENT -->
+  <!-- HEADER (like hero but smaller) -->
+  <section class="header">
+    <h1>About Me</h1>
+    <p>My background, skills, and journey into Data Analytics</p>
+  </section>
+
+  <!-- MAIN CONTENT -->
   <div class="container">
-    <h2>About Me</h2>
 
     <p>
       I am a Data Analyst with 4+ years of experience in software engineering.
@@ -100,7 +144,12 @@
       <span class="skill">NumPy</span>
       <span class="skill">BigQuery</span>
     </div>
+
   </div>
+
+  <footer>
+    <p>© 2026 Aruna Shewalkar</p>
+  </footer>
 
 </body>
 </html>
