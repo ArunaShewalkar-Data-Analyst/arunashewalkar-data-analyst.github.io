@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sales Analysis | Aruna Shewalkar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+  <style>
+    body { margin:0; font-family:'Poppins',sans-serif; background:#f9fafb; color:#333; }
+    nav { display:flex; justify-content:space-between; align-items:center; padding:20px 10%; background:white; box-shadow:0 2px 6px rgba(0,0,0,0.05); position:sticky; top:0; }
+    nav h3 { margin:0; color:#2563eb; }
+    nav a { margin-left:20px; text-decoration:none; color:#333; font-weight:500; }
+    nav a:hover { color:#2563eb; }
+    .header { padding:60px 10%; background: linear-gradient(to right, #f8fafc, #eef2ff); }
+    .header h1 { margin:0; font-size:36px; }
+    .header p { margin-top:10px; color:#555; }
+    .container { max-width:1000px; margin-left:10%; padding:40px 0; }
+    .analysis h3 { margin-top:30px; }
+    pre { background:#f1f5f9; padding:15px; border-radius:10px; overflow-x:auto; }
+    img { max-width:100%; margin-bottom:20px; border-radius:10px; }
+    footer { text-align:center; padding:20px; background:#111; color:white; margin-top:40px; }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <h3>Aruna</h3>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="project.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <section class="header">
+    <h1>Sales Performance & Trend Analysis</h1>
+    <p>Insights from 40,000+ sales records</p>
+  </section>
+
+  <!-- ANALYSIS CONTENT -->
+  <div class="container analysis">
+
+    <h3>Python Code</h3>
+    <pre><code>
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Load dataset
+df = pd.read_csv("sales_data.csv", encoding='latin1', engine='python')
+df.columns = df.columns.str.strip()
+
+# Convert date safely
+df['Order Date'] = pd.to_datetime(df['Order Date'], errors='coerce')
+
+# Drop missing values
+df = df.dropna(subset=['Order Date', 'Sales'])
+
+# Feature Engineering
+df['Year'] = df['Order Date'].dt.year
+df['Month'] = df['Order Date'].dt.month
+df['Quarter_num'] = df['Order Date'].dt.quarter
+
+# Total Sales
+print("Total Sales:", df['Sales'].sum())
+
+# Sales by Quarter
+quarter_sales = df.groupby('Quarter_num')['Sales'].sum()
+print("\nSales by Quarter:\n", quarter_sales)
+
+# Q4 Analysis
+q4_sales = quarter_sales.get(4, 0)
+other_quarters = quarter_sales.drop(4, errors='ignore')
+if len(other_quarters) > 0:
+    avg_other = other_quarters.mean()
+    increase = ((q4_sales - avg_other) / avg_other) * 100
+    print(f"\nQ4 Revenue Increase: {increase:.2f}%")
+
+# Monthly Trend
+monthly_sales = df.groupby('Month')['Sales'].sum()
+plt.figure()
+monthly_sales.plot(marker='o')
+plt.show()
+
+# Category Sales
+plt.figure()
+sns.barplot(data=df, x='Category', y='Sales')
+plt.show()
+    </code></pre>
+
+    <h3>Python Output</h3>
+    <pre>
+Total Sales: 2297200.86
+Sales by Quarter:
+Q1    359681.58
+Q2    445509.62
+Q3    613932.11
+Q4    878077.56
+Q4 Revenue Increase: 85.62%
+    </pre>
+
+    <h3>Monthly Sales Trend</h3>
+    <img src="monthly_sales_trend.png" alt="Monthly Sales Trend">
+
+    <h3>Sales by Category</h3>
+    <img src="sales_by_category.png" alt="Sales by Category">
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Aruna Shewalkar</p>
+  </footer>
+
+</body>
+</html>
