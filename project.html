@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | Aruna Shewalkar</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f9fafb;
+      color: #333;
+    }
+
+    /* NAVBAR */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 10%;
+      background: white;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+    }
+
+    nav h3 {
+      margin: 0;
+      color: #2563eb;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #2563eb;
+    }
+
+    /* HEADER */
+    .header {
+      padding: 60px 10%;
+      background: linear-gradient(to right, #f8fafc, #eef2ff);
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 36px;
+    }
+
+    .header p {
+      margin-top: 10px;
+      color: #555;
+    }
+
+    /* CONTAINER */
+    .container {
+      max-width: 1000px;
+      margin-left: 10%;
+      padding: 40px 0;
+    }
+
+    /* PROJECT CARDS */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    .card h3 {
+      margin-top: 0;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    .tags {
+      margin-top: 10px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #e0e7ff;
+      padding: 5px 10px;
+      border-radius: 15px;
+      font-size: 12px;
+      margin-right: 5px;
+    }
+
+    .links {
+      margin-top: 15px;
+    }
+
+    .links a {
+      text-decoration: none;
+      color: #2563eb;
+      font-size: 14px;
+      margin-right: 10px;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #111;
+      color: white;
+      margin-top: 40px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <h3>Aruna</h3>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <section class="header">
+    <h1>Projects</h1>
+    <p>Data Analytics Projects showcasing my skills</p>
+  </section>
+
+  <!-- PROJECTS -->
+  <div class="container">
+
+    <div class="projects">
+
+      <!-- PROJECT 1 -->
+      <div class="card">
+        <h3>Sales Performance & Trend Analysis</h3>
+        <p>
+          Analyzed 40,000+ rows of sales data to identify trends and patterns.
+          Discovered a 12% spike in Q4 revenue using exploratory data analysis
+          and visualization techniques.
+        </p>
+
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">Pandas</span>
+          <span class="tag">Seaborn</span>
+        </div>
+
+        <div class="links">
+          <a href="#">GitHub</a>
+          <a href="#">View Analysis</a>
+        </div>
+      </div>
+
+      <!-- PROJECT 2 -->
+      <div class="card">
+        <h3>Customer Behavior & Lifetime Value</h3>
+        <p>
+          Built SQL models using BigQuery to segment customers with RFM analysis.
+          Identified top 10% customers contributing 65% of total revenue and
+          performed churn analysis using window functions.
+        </p>
+
+        <div class="tags">
+          <span class="tag">SQL</span>
+          <span class="tag">BigQuery</span>
+          <span class="tag">RFM Analysis</span>
+        </div>
+
+        <div class="links">
+          <a href="#">GitHub</a>
+          <a href="#">Query Details</a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Aruna Shewalkar</p>
+  </footer>
+
+</body>
+</html>
