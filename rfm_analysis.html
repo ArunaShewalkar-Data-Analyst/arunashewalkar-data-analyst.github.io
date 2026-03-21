@@ -76,6 +76,13 @@
       border-radius: 10px;
       overflow-x: auto;
     }
+    img {
+  width: 100%;
+  max-width: 900px;
+  border-radius: 10px;
+  margin-top: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
 
     footer {
       text-align: center;
@@ -140,6 +147,8 @@ SELECT *,
 FROM rfm_scores
 ORDER BY RFM_total DESC;
     </code></pre>
+  <h3>RFM Analysis Output</h3>
+<img src="rfm_analysis.png" alt="RFM Output">
 
     <h3>Top 10% Customers Query</h3>
     <pre><code>
@@ -165,7 +174,8 @@ FROM ranked
 GROUP BY decile
 ORDER BY decile;
     </code></pre>
-
+<h3>Top 10% Customers Output</h3>
+<img src="rfm_top_10_perscent.png" alt="Top Customers Output">
     <h3>Key Insight</h3>
     <pre>
 Top 10% customers contribute ~31% of total revenue.
@@ -196,7 +206,8 @@ SELECT
 FROM `rfm-analysis-490622.sandbox.sales_data_clean`
 ORDER BY Customer_ID, Order_Date;
     </code></pre>
-
+<h3>Output</h3>
+<img src="rfm_churn_analysis.png" alt="churn analysis Output">
   </div>
 
   <!-- FOOTER -->
