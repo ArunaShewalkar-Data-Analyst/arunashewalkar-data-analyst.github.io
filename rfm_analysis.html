@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Analysis | Aruna Shewalkar</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f9fafb;
+      color: #333;
+    }
+
+    /* NAVBAR */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 10%;
+      background: white;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+    }
+
+    nav h3 {
+      margin: 0;
+      color: #2563eb;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #2563eb;
+    }
+
+    /* HEADER */
+    .header {
+      padding: 60px 10%;
+      background: linear-gradient(to right, #f8fafc, #eef2ff);
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 36px;
+    }
+
+    .header p {
+      margin-top: 10px;
+      color: #555;
+    }
+
+    /* CONTAINER */
+    .container {
+      max-width: 1000px;
+      margin-left: 10%;
+      padding: 40px 0;
+    }
+
+    h3 {
+      margin-top: 30px;
+    }
+
+    pre {
+      background: #f1f5f9;
+      padding: 15px;
+      border-radius: 10px;
+      overflow-x: auto;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #111;
+      color: white;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <h3>Aruna</h3>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <section class="header">
+    <h1>Customer Behavior & Lifetime Value</h1>
+    <p>RFM Analysis and Customer Segmentation using SQL (BigQuery)</p>
+  </section>
+
+  <!-- CONTENT -->
+  <div class="container">
+
+    <h3>Project Overview</h3>
+    <p>
+      This project analyzes customer behavior using RFM (Recency, Frequency, Monetary) analysis in BigQuery.
+      It segments customers based on purchasing patterns and identifies high-value customers using SQL window functions.
+    </p>
+
+    <h3>RFM Analysis Query</h3>
+    <pre><code>
+WITH rfm AS (
+  SELECT
+    Customer_ID,
+    DATE_DIFF(CURRENT_DATE(), MAX(Order_Date), DAY) AS Recency,
+    COUNT(DISTINCT Order_ID) AS Frequency,
+    SUM(Sales) AS Monetary
+  FROM `rfm-analysis-490622.sandbox.sales_data_clean`
+  GROUP BY Customer_ID
+),
+
+rfm_scores AS (
+  SELECT *,
+    NTILE(4) OVER (ORDER BY Recency DESC) AS R_score,
+    NTILE(4) OVER (ORDER BY Frequency) AS F_score,
+    NTILE(4) OVER (ORDER BY Monetary) AS M_score
+  FROM rfm
+)
+
+SELECT *,
+  (R_score + F_score + M_score) AS RFM_total
+FROM rfm_scores
+ORDER BY RFM_total DESC;
+    </code></pre>
+
+    <h3>Top 10% Customers Query</h3>
+    <pre><code>
+WITH customer_sales AS (
+  SELECT
+    Customer_ID,
+    SUM(Sales) AS total_sales
+  FROM `rfm-analysis-490622.sandbox.sales_data_clean`
+  GROUP BY Customer_ID
+),
+
+ranked AS (
+  SELECT *,
+    NTILE(10) OVER (ORDER BY total_sales DESC) AS decile
+  FROM customer_sales
+)
+
+SELECT
+  decile,
+  COUNT(Customer_ID) AS num_customers,
+  SUM(total_sales) AS revenue
+FROM ranked
+GROUP BY decile
+ORDER BY decile;
+    </code></pre>
+
+    <h3>Key Insight</h3>
+    <pre>
+Top 10% customers contribute ~31% of total revenue.
+
+This indicates a moderate revenue concentration where high-value customers
+play an important role, but revenue is still distributed across a wider customer base.
+    </pre>
+
+    <h3>Churn Analysis Query</h3>
+    <pre><code>
+SELECT
+  Customer_ID,
+  Order_Date,
+  LAG(Order_Date) OVER (
+    PARTITION BY Customer_ID
+    ORDER BY Order_Date
+  ) AS previous_order,
+
+  DATE_DIFF(
+    Order_Date,
+    LAG(Order_Date) OVER (
+      PARTITION BY Customer_ID
+      ORDER BY Order_Date
+    ),
+    DAY
+  ) AS gap_days
+
+FROM `rfm-analysis-490622.sandbox.sales_data_clean`
+ORDER BY Customer_ID, Order_Date;
+    </code></pre>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Aruna Shewalkar</p>
+  </footer>
+
+</body>
+</html>
