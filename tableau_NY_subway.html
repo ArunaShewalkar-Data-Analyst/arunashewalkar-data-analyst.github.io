@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tableau NY Subway Dashboard | Aruna Shewalkar</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f9fafb;
+      color: #333;
+    }
+
+    /* NAVBAR */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 10%;
+      background: white;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+    }
+
+    nav h3 {
+      margin: 0;
+      color: #2563eb;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #2563eb;
+    }
+
+    /* HEADER */
+    .header {
+      padding: 40px 10%;
+      background: linear-gradient(to right, #f8fafc, #eef2ff);
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 32px;
+    }
+
+    .header p {
+      margin-top: 10px;
+      color: #555;
+    }
+
+    /* CONTAINER */
+    .container {
+      max-width: 1000px;
+      margin-left: 10%;
+      padding: 40px 0;
+    }
+
+    .sheet {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      margin-bottom: 30px;
+    }
+
+    .sheet h2 {
+      margin-top: 0;
+      color: #2563eb;
+    }
+
+    .sheet p {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .sheet img {
+      max-width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #111;
+      color: white;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <h3>Aruna</h3>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="project.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <section class="header">
+    <h1>NY Subway Tableau Dashboard</h1>
+    <p>Interactive analysis of trip patterns, station activity, and arrival times using Tableau Desktop.</p>
+  </section>
+
+  <!-- CONTAINER -->
+  <div class="container">
+
+    <!-- Sheet 1 -->
+    <div class="sheet">
+      <h2>Sheet 1: Trips per Station</h2>
+      <p>This sheet shows the number of trips per station, highlighting the busiest stations in the New York subway network.</p>
+      <img src="trips_per_station.png" alt="Trips per Station">
+    </div>
+
+    <!-- Sheet 2 -->
+    <div class="sheet">
+      <h2>Sheet 2: Average Stop Position</h2>
+      <p>This sheet visualizes the average stop position of each station, giving insights into early vs late stops across trips.</p>
+      <img src="average_stop_position.png" alt="Average Stop Position">
+    </div>
+
+    <!-- Sheet 3 -->
+    <div class="sheet">
+      <h2>Sheet 3: Arrival Time Analysis</h2>
+      <p>This sheet shows the distribution of train arrival times per station, highlighting peak hours and station-level timing patterns.</p>
+      <img src="arrival_time.png" alt="Arrival Time Analysis">
+    </div>
+
+    <!-- Full Dashboard -->
+    <div class="sheet">
+      <h2>Full NY Subway Dashboard</h2>
+      <p>The complete dashboard combines all sheets, allowing interactive exploration of trip volumes, average stop positions, and arrival times.</p>
+      <img src="NY_subway_dashboard.png" alt="Full NY Subway Dashboard">
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Aruna Shewalkar</p>
+  </footer>
+
+</body>
+</html>
